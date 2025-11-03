@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package hello;
+
+// path where generated Go code will live
+option go_package = "."; 
+
+// service defines the RPC interface (like a class with methods)
+service HelloService {
+
+    // defines the function signature
+    rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    string message = 1;
+}
